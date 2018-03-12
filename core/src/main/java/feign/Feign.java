@@ -106,6 +106,7 @@ public abstract class Feign {
     private InvocationHandlerFactory invocationHandlerFactory =
         new InvocationHandlerFactory.Default();
     private boolean decode404;
+    private boolean decodeErrors;
     private boolean closeAfterDecode = true;
 
     public Builder logLevel(Logger.Level logLevel) {
@@ -168,6 +169,11 @@ public abstract class Feign {
      */
     public Builder decode404() {
       this.decode404 = true;
+      return this;
+    }
+
+    public Builder decodeErrors() {
+      this.decodeErrors = true;
       return this;
     }
 
